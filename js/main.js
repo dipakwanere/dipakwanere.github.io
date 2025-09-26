@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const typed = new Typed('.typed-text', {
         strings: [
             'Data Scientist',
-            'Machine Learning Engineer',
-            'AI Researcher',
-            'Python Developer'
+            'Machine Learning Engineer'
         ],
         typeSpeed: 50,
         backSpeed: 30,
