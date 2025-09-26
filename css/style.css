@@ -1,26 +1,88 @@
 /* style.css: Custom styles for portfolio */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 60%, #e3f0ff 100%);
     color: #222;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background: #fff;
 }
 
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    color: #0077b6 !important;
+    letter-spacing: 1px;
 }
 
-footer {
-    background: #e9ecef;
+.nav-link.active,
+.nav-link:hover {
+    color: #0077b6 !important;
+    font-weight: 500;
+}
+
+main.container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 2.5rem 2rem;
+    margin-top: 2rem;
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(0, 119, 182, 0.10);
 }
 
 .card-img-top {
     object-fit: cover;
     height: 200px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.btn-primary,
+.btn-outline-primary {
+    background: linear-gradient(90deg, #0077b6 60%, #00b4d8 100%);
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.08);
+    transition: background 0.2s;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    background: linear-gradient(90deg, #00b4d8 60%, #0077b6 100%);
+    color: #fff;
+}
+
+footer {
+    background: #e9ecef;
+    border-top: 1px solid #d0d7de;
+    margin-top: 2rem;
+}
+
+footer a {
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #0077b6 !important;
 }
 
 @media (max-width: 768px) {
@@ -30,5 +92,9 @@ section {
 
     .lead {
         font-size: 1rem;
+    }
+
+    main.container {
+        padding: 1.2rem 0.5rem;
     }
 }
