@@ -1,26 +1,65 @@
-/* style.css: Custom styles for portfolio */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #f8f9fa 60%, #e3f0ff 100%);
-    color: #222;
+/* Modern Portfolio Styles */
+:root {
+    --primary: #0077b6;
+    --secondary: #00b4d8;
+    --accent: #f72585;
+    --dark: #1a1a1a;
+    --light: #f8f9fa;
+    --transition: all 0.3s ease;
 }
 
+/* Base Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #ffffff;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Navigation */
 .navbar {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    background: #fff;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    padding: 1rem 0;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
 }
 
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: #0077b6 !important;
-    letter-spacing: 1px;
-}
-
-.nav-link.active,
-.nav-link:hover {
-    color: #0077b6 !important;
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dark) !important;
 }
 
 main.container {
