@@ -124,6 +124,86 @@ footer a:hover {
     color: #0077b6 !important;
 }
 
+/* Projects Section */
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+}
+
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.project-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    margin-bottom: 1rem;
+}
+
+.tech-stack .badge {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.project-links {
+    margin-top: auto;
+}
+
+.project-links .btn {
+    padding: 0.5rem 1rem;
+}
+
+.project-links .btn i {
+    margin-right: 0.5rem;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -135,5 +215,9 @@ footer a:hover {
 
     main.container {
         padding: 1.2rem 0.5rem;
+    }
+
+    .project-card {
+        margin-bottom: 2rem;
     }
 }
