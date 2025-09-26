@@ -22,26 +22,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 
 <body>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Particles.js Background -->
+    <div id="particles-js" class="particles-container"></div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="highlight">Dipak</span> Wanere
+                <span class="text-gradient">Dipak</span> <span class="fw-light">Wanere</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,10 +55,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <span class="nav-link-number">01.</span>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <span class="nav-link-number">02.</span>Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">
+                            <span class="nav-link-number">03.</span>Skills
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <span class="nav-link-number">04.</span>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="assets/Dipak Wanere - CV - Data Scientist.pdf" target="_blank">
+                            <i class="bi bi-download me-2"></i>Resume
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -61,29 +88,98 @@
     <!-- Hero Section -->
     <header class="hero-section" id="main-content">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4">
-                        Hi, I'm <span class="highlight">Dipak Wanere</span>
-                    </h1>
-                    <h2 class="typed-text"></h2>
-                    <p class="lead mt-4">Transforming data into insights and building intelligent solutions that make a
-                        difference.</p>
-                    <div class="cta-buttons">
-                        <a href="projects.html" class="btn btn-primary btn-lg">View Projects</a>
-                        <a href="contact.html" class="btn btn-outline-primary btn-lg ms-3">Get in Touch</a>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="hero-content">
+                        <span class="hero-welcome mb-3 d-block" data-aos="fade-up">Welcome to my world</span>
+                        <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="100">
+                            Hi, I'm <span class="text-gradient">Dipak Wanere</span>
+                        </h1>
+                        <div class="hero-subtitle mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <span class="typed-text"></span>
+                        </div>
+                        <p class="hero-description mb-4" data-aos="fade-up" data-aos-delay="300">
+                            Transforming complex data into actionable insights and building intelligent solutions that
+                            drive innovation. Specializing in Machine Learning, AI, and Data Science to solve real-world
+                            challenges.
+                        </p>
+
+                        <div class="tech-badges mb-4" data-aos="fade-up" data-aos-delay="400">
+                            <span class="badge">Python</span>
+                            <span class="badge">Machine Learning</span>
+                            <span class="badge">Deep Learning</span>
+                            <span class="badge">NLP</span>
+                            <span class="badge">MLOps</span>
+                            <span class="badge">Generative AI</span>
+                        </div>
+
+                        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+                            <a href="#projects" class="btn btn-primary btn-lg">
+                                <i class="bi bi-code-slash me-2"></i>View Projects
+                            </a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg ms-3">
+                                <i class="bi bi-chat-text me-2"></i>Get in Touch
+                            </a>
+                        </div>
+
+                        <div class="hero-stats mt-5">
+                            <div class="row g-4">
+                                <div class="col-4" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="stat-item">
+                                        <div class="stat-number">
+                                            <span class="counter">5</span>+
+                                        </div>
+                                        <p>Years Experience</p>
+                                    </div>
+                                </div>
+                                <div class="col-4" data-aos="fade-up" data-aos-delay="700">
+                                    <div class="stat-item">
+                                        <div class="stat-number">
+                                            <span class="counter">50</span>+
+                                        </div>
+                                        <p>Projects</p>
+                                    </div>
+                                </div>
+                                <div class="col-4" data-aos="fade-up" data-aos-delay="800">
+                                    <div class="stat-item">
+                                        <div class="stat-number">
+                                            <span class="counter">20</span>+
+                                        </div>
+                                        <p>ML Models</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <div class="hero-image">
-                        <!-- Add your professional photo here -->
-                        <img src="assets/profile-image.jpg" alt="Dipak Wanere" class="img-fluid rounded-circle">
+
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+                    <div class="hero-image-container">
+                        <div class="hero-image-wrapper">
+                            <img src="assets/profile-image.jpg" alt="Dipak Wanere" class="hero-image">
+                            <div class="hero-blob"></div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-element python">
+                                <i class="bi bi-braces"></i>
+                            </div>
+                            <div class="float-element ai">
+                                <i class="bi bi-cpu"></i>
+                            </div>
+                            <div class="float-element data">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <div class="float-element genai">
+                                <i class="bi bi-stars"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse"></div>
+            <span>Scroll to explore</span>
         </div>
     </header>
 
@@ -115,152 +211,285 @@
             </div>
         </section>
 
-        <!-- Featured Skills -->
-        <section class="skills-section py-5 bg-light">
+        <!-- Core Competencies -->
+        <section class="core-competencies py-5" id="skills">
             <div class="container">
                 <h2 class="section-title text-center mb-5" data-aos="fade-up">Core Competencies</h2>
-                <div class="row g-4">
-                    <div class="col-md-3" data-aos="fade-up">
-                        <div class="skill-card">
-                            <i class="bi bi-graph-up"></i>
+                <div class="row g-4 justify-content-center">
+                    <!-- Data Science -->
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
                             <h3>Data Science</h3>
                             <p>Statistical Analysis, Predictive Modeling, Data Visualization</p>
                         </div>
                     </div>
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="skill-card">
-                            <i class="bi bi-cpu"></i>
+
+                    <!-- Machine Learning -->
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="bi bi-cpu"></i>
+                            </div>
                             <h3>Machine Learning</h3>
                             <p>Deep Learning, NLP, Computer Vision, MLOps</p>
                         </div>
                     </div>
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="skill-card">
-                            <i class="bi bi-code-square"></i>
+
+                    <!-- Programming -->
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="bi bi-code-square"></i>
+                            </div>
                             <h3>Programming</h3>
                             <p>Python, R, SQL, Cloud Technologies</p>
                         </div>
                     </div>
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="skill-card">
-                            <i class="bi bi-stars"></i>
+
+                    <!-- Generative AI -->
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="competency-card">
+                            <div class="competency-icon">
+                                <i class="bi bi-stars"></i>
+                            </div>
                             <h3>Generative AI</h3>
-                            <p>LLMs, RAG, Prompt Engineering, LangChain, OpenAI APIs, Fine-tuning, Model Deployment</p>
+                            <p>LLMOps, Agentic RAG, LangChain, OpenAI APIs</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <i class="bi bi-cpu"></i>
+        <h3>Machine Learning</h3>
+        <p>Deep Learning, NLP, Computer Vision, MLOps</p>
+        </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card">
+                <i class="bi bi-code-square"></i>
+                <h3>Programming</h3>
+                <p>Python, R, SQL, Cloud Technologies</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-card">
+                <i class="bi bi-stars"></i>
+                <h3>Generative AI</h3>
+                <p>LLMs, RAG, Prompt Engineering, LangChain, OpenAI APIs, Fine-tuning, Model Deployment</p>
+            </div>
+        </div>
+        </div>
+        </div>
+        </section>
 
         <!-- Projects Section -->
-        <section class="projects-section py-5">
+        <section class="projects-section py-5" id="projects">
             <div class="container">
-                <h2 class="section-title text-center mb-5" data-aos="fade-up">Featured Projects</h2>
+                <div class="section-header text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        A showcase of my work in AI, Machine Learning, and Data Science
+                    </p>
+                </div>
                 <div class="row g-4">
                     <!-- Realtime Trip Planner -->
-                    <div class="col-md-6" data-aos="fade-up">
-                        <div class="project-card">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <article class="project-card">
                             <div class="project-image">
                                 <img src="assets/projects/trip-planner.jpg" alt="Realtime Trip Planner"
-                                    class="img-fluid" onerror="this.src='assets/projects/placeholder.jpg'">
+                                    onerror="this.src='assets/projects/placeholder.jpg'">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/dipakwanere/Realtime-trip-planner-system"
+                                            target="_blank" class="project-link">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="project-content">
-                                <h3>Realtime Trip Planner System</h3>
-                                <p>An intelligent system for real-time trip planning and optimization using advanced
+                                <div class="project-header">
+                                    <h3 class="project-title">Realtime Trip Planner System</h3>
+                                    <div class="project-meta">
+                                        <span class="project-category">Machine Learning</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">An intelligent system for real-time trip planning and
+                                    optimization using advanced
                                     algorithms and machine learning.</p>
                                 <div class="tech-stack">
-                                    <span class="badge bg-primary">Python</span>
-                                    <span class="badge bg-secondary">Machine Learning</span>
-                                    <span class="badge bg-info">Real-time Systems</span>
-                                </div>
-                                <div class="project-links mt-3">
-                                    <a href="https://github.com/dipakwanere/Realtime-trip-planner-system"
-                                        target="_blank" class="btn btn-outline-primary">
-                                        <i class="bi bi-github"></i> View Code
-                                    </a>
-                                    <a href="#" class="btn btn-primary ms-2">
-                                        <i class="bi bi-play-fill"></i> Live Demo
-                                    </a>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Machine Learning</span>
+                                    <span class="tech-badge">Real-time Systems</span>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
 
                     <!-- House Price Prediction -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-card">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <article class="project-card">
                             <div class="project-image">
                                 <img src="assets/projects/house-price.jpg" alt="House Price Prediction"
-                                    class="img-fluid" onerror="this.src='assets/projects/placeholder.jpg'">
+                                    onerror="this.src='assets/projects/placeholder.jpg'">
+                                <div class="project-overlay">
+                                    <div class="project-links">
+                                        <a href="https://github.com/dipakwanere/house-price-prediction-ml"
+                                            target="_blank" class="project-link">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="#" class="project-link">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="project-content">
-                                <h3>House Price Prediction ML</h3>
-                                <p>Machine learning model for accurate house price prediction using advanced regression
+                                <div class="project-header">
+                                    <h3 class="project-title">House Price Prediction ML</h3>
+                                    <div class="project-meta">
+                                        <span class="project-category">Machine Learning</span>
+                                    </div>
+                                </div>
+                                <p class="project-description">Machine learning model for accurate house price
+                                    prediction using advanced regression
                                     techniques and feature engineering.</p>
                                 <div class="tech-stack">
-                                    <span class="badge bg-primary">Python</span>
-                                    <span class="badge bg-secondary">Machine Learning</span>
-                                    <span class="badge bg-success">Data Analysis</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Machine Learning</span>
+                                    <span class="tech-badge">Data Analysis</span>
                                 </div>
-                                <div class="project-links mt-3">
-                                    <a href="https://github.com/dipakwanere/house-price-prediction-ml" target="_blank"
-                                        class="btn btn-outline-primary">
-                                        <i class="bi bi-github"></i> View Code
-                                    </a>
-                                    <a href="#" class="btn btn-primary ms-2">
-                                        <i class="bi bi-play-fill"></i> Live Demo
-                                    </a>
-                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- LLM-Based Code Assistant -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projects/llm-assistant.jpg" alt="LLM-Based Code Assistant"
+                            onerror="this.src='assets/projects/placeholder.jpg'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/dipakwanere/llm-code-assistant" target="_blank"
+                                    class="project-link">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Placeholder Project 3 -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/projects/placeholder.jpg" alt="Future Project" class="img-fluid">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">LLM-Based Code Assistant</h3>
+                            <div class="project-meta">
+                                <span class="project-category">Generative AI</span>
                             </div>
-                            <div class="project-content">
-                                <h3>Coming Soon</h3>
-                                <p>Exciting new project in development. Stay tuned for more updates!</p>
-                                <div class="tech-stack">
-                                    <span class="badge bg-primary">AI</span>
-                                    <span class="badge bg-secondary">Deep Learning</span>
-                                    <span class="badge bg-info">Cloud</span>
-                                </div>
-                                <div class="project-links mt-3">
-                                    <a href="#" class="btn btn-outline-primary disabled">
-                                        <i class="bi bi-github"></i> Coming Soon
-                                    </a>
-                                </div>
+                        </div>
+                        <p class="project-description">An intelligent code assistant powered by LLMs and RAG, providing
+                            contextual code suggestions and explanations.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">LangChain</span>
+                            <span class="tech-badge">OpenAI</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- AI Image Generator -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projects/ai-image-gen.jpg" alt="AI Image Generator"
+                            onerror="this.src='assets/projects/placeholder.jpg'">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/dipakwanere/ai-image-generator" target="_blank"
+                                    class="project-link">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Placeholder Project 4 -->
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/projects/placeholder.jpg" alt="Future Project" class="img-fluid">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">AI Image Generator</h3>
+                            <div class="project-meta">
+                                <span class="project-category">Computer Vision</span>
                             </div>
-                            <div class="project-content">
-                                <h3>Coming Soon</h3>
-                                <p>Another exciting project in the pipeline. Check back later!</p>
-                                <div class="tech-stack">
-                                    <span class="badge bg-primary">MLOps</span>
-                                    <span class="badge bg-secondary">NLP</span>
-                                    <span class="badge bg-success">Big Data</span>
-                                </div>
-                                <div class="project-links mt-3">
-                                    <a href="#" class="btn btn-outline-primary disabled">
-                                        <i class="bi bi-github"></i> Coming Soon
-                                    </a>
-                                </div>
-                            </div>
+                        </div>
+                        <p class="project-description">A state-of-the-art image generation system using diffusion models
+                            and advanced prompt engineering.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Stable Diffusion</span>
+                            <span class="tech-badge">CUDA</span>
+                            <span class="tech-badge">FastAPI</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projects/placeholder.jpg" alt="Future Project" class="img-fluid">
+                    </div>
+                    <div class="project-content">
+                        <h3>Coming Soon</h3>
+                        <p>Exciting new project in development. Stay tuned for more updates!</p>
+                        <div class="tech-stack">
+                            <span class="badge bg-primary">AI</span>
+                            <span class="badge bg-secondary">Deep Learning</span>
+                            <span class="badge bg-info">Cloud</span>
+                        </div>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-outline-primary disabled">
+                                <i class="bi bi-github"></i> Coming Soon
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Placeholder Project 4 -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/projects/placeholder.jpg" alt="Future Project" class="img-fluid">
+                    </div>
+                    <div class="project-content">
+                        <h3>Coming Soon</h3>
+                        <p>Another exciting project in the pipeline. Check back later!</p>
+                        <div class="tech-stack">
+                            <span class="badge bg-primary">MLOps</span>
+                            <span class="badge bg-secondary">NLP</span>
+                            <span class="badge bg-success">Big Data</span>
+                        </div>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-outline-primary disabled">
+                                <i class="bi bi-github"></i> Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
             </div>
         </section>
     </main>

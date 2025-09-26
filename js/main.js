@@ -6,17 +6,24 @@ document.addEventListener('DOMContentLoaded', function () {
         offset: 100
     });
 
-    // Typed.js initialization
-    const typed = new Typed('.typed-text', {
-        strings: [
-            'Data Scientist',
-            'Machine Learning Engineer'
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 2000,
-        loop: true
-    });
+    // Initialize Typed.js with expanded roles
+    const typedText = document.querySelector('.typed-text');
+    if (typedText) {
+        typedText.innerHTML = ''; // Clear existing content
+        new Typed(typedText, {
+            strings: [
+                'Data Scientist',
+                'Machine Learning Engineer',
+                'AI Researcher',
+                'Full Stack ML Developer'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            smartBackspace: true
+        });
+    }
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -70,45 +77,62 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Initialize particles.js
+    // Initialize particles.js with modern configuration
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 50,
+                value: 80,
                 density: {
                     enable: true,
-                    value_area: 800
+                    value_area: 1000
                 }
             },
             color: {
-                value: '#0077b6'
+                value: ['#2563eb', '#06b6d4', '#3b82f6']
             },
             shape: {
                 type: 'circle'
             },
             opacity: {
-                value: 0.5,
-                random: false
+                value: 0.25,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
             },
             size: {
-                value: 3,
-                random: true
+                value: 4,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 2,
+                    size_min: 0.1,
+                    sync: false
+                }
             },
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: '#0077b6',
-                opacity: 0.4,
+                color: '#2563eb',
+                opacity: 0.2,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 6,
+                speed: 2,
                 direction: 'none',
-                random: false,
+                random: true,
                 straight: false,
                 out_mode: 'out',
-                bounce: false
+                bounce: false,
+                attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
             }
         },
         interactivity: {
@@ -116,16 +140,76 @@ document.addEventListener('DOMContentLoaded', function () {
             events: {
                 onhover: {
                     enable: true,
-                    mode: 'grab'
+                    mode: 'bubble'
                 },
                 onclick: {
                     enable: true,
                     mode: 'push'
                 },
                 resize: true
+            },
+            modes: {
+                bubble: {
+                    distance: 200,
+                    size: 6,
+                    duration: 0.2,
+                    opacity: 0.8,
+                    speed: 3
+                },
+                push: {
+                    particles_nb: 4
+                }
             }
         },
         retina_detect: true
     });
+
+    // Add hover effects for project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            const icons = this.querySelectorAll('.project-link');
+            icons.forEach((icon, index) => {
+                icon.style.transitionDelay = `${index * 0.1}s`;
+            });
+        });
+
+        card.addEventListener('mouseleave', function () {
+            const icons = this.querySelectorAll('.project-link');
+            icons.forEach(icon => {
+                icon.style.transitionDelay = '0s';
+            });
+        });
+    });
+
+    // Add hover effects for competency cards
+    document.querySelectorAll('.competency-card').forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-10px)';
+            this.querySelector('.competency-icon').style.transform = 'scale(1.1)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+            this.querySelector('.competency-icon').style.transform = 'scale(1)';
+        });
+    });
+
+    // Update typed.js strings
+    const typed = document.querySelector('.typed-text');
+    if (typed) {
+        typed.innerHTML = ''; // Clear existing content
+        new Typed(typed, {
+            strings: [
+                'Data Scientist',
+                'Machine Learning Engineer',
+                'AI Researcher',
+                'Full Stack ML Developer'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            smartBackspace: true
+        });
+    }
 });
-// Add interactivity as needed
